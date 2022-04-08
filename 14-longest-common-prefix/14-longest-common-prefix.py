@@ -13,4 +13,7 @@ class Solution:
                 pref = pref[0:plen-1]
                 plen -= 1
                 
+                if plen==0:
+                    return("")
+                
         return(pref)
