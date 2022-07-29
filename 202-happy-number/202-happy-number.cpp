@@ -9,8 +9,7 @@ public:
             myset.insert(val);
             val= 0;
             while(n){
-                index = n%10;
-                val += index*index;
+                val += (n%10)*(n%10);
                 n = n/10;
             }
             n = val;
