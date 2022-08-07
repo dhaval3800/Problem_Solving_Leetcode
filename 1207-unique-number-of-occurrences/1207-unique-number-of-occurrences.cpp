@@ -18,6 +18,7 @@ public:
             ans.push_back(count);
             i = i+count;
         }
+        
         size = ans.size();
         sort(ans.begin(),ans.end());
         for(int i = 0;i<size-1;i++){
