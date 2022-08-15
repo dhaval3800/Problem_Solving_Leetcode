@@ -6,17 +6,19 @@ public:
         int i = 0;
         sort(arr.begin(),arr.end());
         while(i<size){
-            int count = 1;
-            for(int j =i+1;j<size;j++){
+            
+            int j = i+1;
+            while(j<size){
                 if(arr[i]==arr[j]){
-                    count++;
+                    j++;
                 }
-                else{
+                else
                     break;
-                }
             }
+            
+            int count = j-i;
             ans.push_back(count);
-            i = i+count;
+            i = j;
         }
         
         size = ans.size();
