@@ -38,3 +38,64 @@ public:
       }
     }
 };
+
+//QuickSort 
+
+// class Solution {
+// public:
+//     vector<int> sortArray(vector<int>& nums) {
+//         int n = nums.size()-1;
+//         int s = 0;
+//         int e = n;
+//         quickSort(nums, 0, n);
+//         return nums;
+//     }
+    
+    
+//     int partition(vector<int>& nums,int s, int e){
+        
+//         int pivot = nums[s];
+        
+//         int count = 0;
+//         for(int i=s+1; i<=e; i++){
+//             if(nums[i]<=pivot)
+//                 count++;
+//         }
+        
+//         int pivotIndex = s+count;
+//         swap(nums[pivotIndex], nums[s]);
+        
+//         int i = s;
+//         int j = e;
+//         while(i<pivotIndex && j>pivotIndex){
+            
+//             while(nums[i]<=pivot){
+//                 i++;
+//             }
+            
+//             while(nums[j]>pivot){
+//                 j--;
+//             }
+            
+//             if(i<pivotIndex && j>pivotIndex){
+//                 swap(nums[i++],nums[j--]);
+//             }
+//         }
+//         return pivotIndex;
+//     }
+    
+//     void quickSort(vector<int>& nums,int s, int e){
+        
+//         int mid = s+ (e-s)/2;
+        
+//         if(s>=e){
+//             return;
+//         }
+        
+//         int p = partition(nums, s, e);
+        
+//         quickSort(nums, s, p-1);
+//         quickSort(nums, p+1, e);
+        
+//     }
+// };
