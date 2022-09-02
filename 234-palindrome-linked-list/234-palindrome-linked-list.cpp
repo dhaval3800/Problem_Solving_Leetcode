@@ -15,12 +15,6 @@ public:
             return true;
         }
         
-        if(head->next->next==NULL){
-            if(head->val!=head->next->val){
-                return false;
-            }
-        }
-        
         //step1
         ListNode* mid = getmid(head);
         
