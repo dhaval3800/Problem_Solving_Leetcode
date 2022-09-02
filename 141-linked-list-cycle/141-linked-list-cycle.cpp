@@ -32,7 +32,7 @@
 
 class Solution {
 public:
-bool hasCycle(ListNode *head) {
+    bool hasCycle(ListNode *head) {
         if(head==NULL) return 0;
         if(head->next==NULL) return 0;
         
