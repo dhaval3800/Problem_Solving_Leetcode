@@ -22,6 +22,7 @@ public:
             return solve(list2,list1);
         }
     }
+    
         
     ListNode* solve(ListNode* list1 , ListNode* list2){
         
@@ -30,7 +31,7 @@ public:
         ListNode* next1 = temp1->next;
         ListNode* next2 = temp2->next;
         
-        while(next1==NULL && temp2!=NULL ){
+        if(next1==NULL && temp2!=NULL ){
             temp1->next = temp2;
             return list1;
         }
