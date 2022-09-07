@@ -13,13 +13,13 @@ public:
         ListNode * fast = headB;
         while(slow!=fast){
             if(slow==NULL){
-                slow = headA;
+                slow = headB;
             }
             else
                 slow = slow->next;
             
             if(fast==NULL){
-                fast = headB;
+                fast = headA;
             }
             else
                 fast = fast->next;
