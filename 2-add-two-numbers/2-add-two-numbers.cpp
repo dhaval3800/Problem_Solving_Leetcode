@@ -10,13 +10,24 @@
  */
 class Solution {
 public:
-    vector<int> addition(ListNode* l1, ListNode* l2){
-        vector<int> ans;
-        
+    
+    void insertAtTail(ListNode* &head, ListNode* &tail, int value){
+        ListNode* temp = new ListNode(value);
+        tail->next = temp;
+        tail = temp;
+        }
+    
+    ListNode* addition(ListNode* l1, ListNode* l2){
+
         ListNode* curr1 = l1;
         ListNode* curr2 = l2;
+        
         int a =0,b=0;
         int c = 0;
+        
+        ListNode* zero = new ListNode(-1);
+        ListNode* tail = zero;
+        
         
         while(curr1!=NULL && curr2!=NULL){
             a = curr1->val + curr2->val + c;
@@ -24,7 +35,7 @@ public:
             c = a/10;
             curr1 = curr1->next;
             curr2 = curr2->next;
-            ans.push_back(b); 
+            insertAtTail(zero,tail,b);
         }
         
         while(curr1!=NULL){
@@ -32,7 +43,7 @@ public:
             b = a%10;
             c = a/10;
             curr1 = curr1->next;
-            ans.push_back(b); 
+            insertAtTail(zero,tail,b); 
         }
         
         while(curr2!=NULL){
@@ -40,7 +51,7 @@ public:
             b = a%10;
             c = a/10;
             curr2 = curr2->next;
-            ans.push_back(b); 
+            insertAtTail(zero,tail,b); 
         }
         
         
@@ -48,26 +59,17 @@ public:
             a = c;
             b = a%10;
             c = a/10;
-            ans.push_back(b); 
+            insertAtTail(zero,tail,b); 
         }
         
-        return ans;
+        return zero->next;
     }
     
     ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-        vector<int> hehe;
-        hehe = addition(l1,l2);
-        for(int i = 0; i<hehe.size(); i++){
-            cout << hehe[i];
-        }
         
-        ListNode* zero = new ListNode(-1);
-        ListNode* next1 = zero;
-        for(int i = 0; i<hehe.size(); i++){
-            ListNode* temp = new ListNode(hehe[i]);
-            next1->next = temp;
-            next1 = temp;
-        }
-        return zero->next;
+        ListNode* hehe = addition(l1,l2);
+        return hehe;
     }
+    
+    
 };
