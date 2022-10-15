@@ -11,11 +11,6 @@ public:
             else
                 cnt++;
         }
-        for(int j =0; j<nums.size(); j++){
-            cout<< nums[j]<<" ";
-            
-        } 
-        cout <<endl;
         return cnt;
     }
 };
