@@ -6,8 +6,6 @@ public:
         e = nums.size()-1;
         while(s<=e){
             mid = s+ (e-s)/2;
-            cout<<mid;
-            cout<<endl;
             if(nums[mid]>target){
                 e = mid-1;
             }
